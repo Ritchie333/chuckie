@@ -1,0 +1,60 @@
+[Game]
+Game=Chuckie Egg
+Copyright=Copyright Nigel Alderton 1983. This disassembly by Ritchie Swann, 2019
+
+[OtherCode:Loading system]
+Source=chuckie_loader.skool
+
+[Poke:Infinite lives]
+A755,0
+
+[Poke:Infinite time]
+992C,21
+
+[Poke:No ducklings]
+911E,C9
+
+[Poke:No mother duck]
+A174,0
+
+[Poke:Only collect 'n' eggs to complete the level]
+A6F7,n
+
+[Fact:Levels]
+There are 8 basic levels in the game. Each set of 8 has
+an increasing level of difficulty set in the game logic
+#TABLE(map)
+{ 1 -  8 | Ducklings }
+{ 9 - 16 | Mother duck }
+{ 17 - 24 | Ducklings and mother duck }
+{ 25 - 32 | Double ducklings and mother duck }
+{ 33 - 40 | Fast double ducklings and mother duck }
+TABLE#
+After this, level 41 is the same as level 33, and so on ad infinitum,
+except with the time gradually being reduced to 400 at level 65.
+
+After level 99, the counter overflows to 0, but the internal level
+counter at #R$6EEB is an 8-bit number, so play can continue,
+wrapping round again and then to level 255 (displayed as "55"),
+after which level 0 is on the full difficulty level, then the
+level counter finally overflows to 1 and difficulty drops to the
+easiest. Unlike Pac-Man, there is no other bug so play can
+continue until the heat death of the universe....
+
+[Fact:Mother duck]
+The mother duck is in play on every level, but its updated location
+in the routine at #R$A0C8 is ignored on levels below 9. The player
+will still lose a life if they walk into her.
+
+[Fact:Theme tunes]
+The tune at the start of the game is "The Birdie Song" which was
+a top five hit a few years before the game was released. It is
+one of the most annoying and infuriating tunes of all time,
+with the possible exception of Mr Blobby.
+
+The tune played when the player loses a life is a brief extract
+of the traditional Spanish guitar piece "Romance Anonimo". 
+
+[Fact:Speech]
+The game supports the Fuller Orator, a hardware extension to the Fuller Box
+audio box with a dedicated speech module. The routine for this is at #R$9CC2.

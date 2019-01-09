@@ -1,0 +1,473 @@
+; Error jump routine
+w$5C3D DEFW $0001
+
+i$5C3F
+
+; BASIC
+;
+; 10 RANDOMIZE USR 24307 (#R$5EF3)
+b$5CCB DEFB $00,$0A,$0E,$00,$F9,$C0,$32,$34
+ $5CD3 DEFB $33,$30,$37,$0E,$00,$00,$F3,$5E
+ $5CDB DEFB $00,$0D
+
+; Data block at 5CDD
+b$5CDD DEFB $C1,$43,$06,$01,$40,$06
+
+; UDGs for loading screen
+;
+; #UDG$5CE3#UDG$5CEB#UDG$5CF3#UDG$5CFB#UDG$5D03#UDG$5D0B#UDG$5D13#UDG$5D1B#UDG$5D23#UDG$5D2B#UDG$5D33#UDG$5D3B#UDG$5D43#UDG$5D4B#UDG$5D53#UDG$5D5B#UDG$5D63#UDG$5D6B#UDG$5D73#UDG$5D7B#UDG$5D83#UDG$5D8B#UDG$5D93#UDG$5D9B#UDG$5DA3#UDG$5DAB#UDG$5DB3#UDG$5DBB#UDG$5DC3#UDG$5DCB#UDG$5DD3#UDG$5DDB#UDG$5DE3#UDG$5DEB#UDG$5DF3#UDG$5DFB#UDG$5E03#UDG$5E0B#UDG$5E13#UDG$5E1B#UDG$5E23#UDG$5E2B#UDG$5E33#UDG$5E3B#UDG$5E43#UDG$5E4B#UDG$5E53#UDG$5E5B#UDG$5E63#UDG$5E6B#UDG$5E73#UDG$5E7B#UDG$5E83#UDG$5E8B#UDG$5E93#UDG$5E9B#UDG$5EA3#UDG$5EAB#UDG$5EB3#UDG$5EBB#UDG$5EC3#UDG$5ECB#UDG$5ED3#UDG$5EDB#UDG$5EE3#UDG$5EEB
+b$5CE3 DEFB $FF,$FF,$FF,$FF,$00,$00,$00,$00
+ $5CEB DEFB $7F,$FF,$FF,$E1,$E1,$E1,$E1,$FF
+ $5CF3 DEFB $84,$CE,$C4,$C0,$C4,$CE,$C4,$C0
+ $5CFB DEFB $FF,$FF,$E1,$E1,$E1,$E1,$E1,$00
+ $5D03 DEFB $C4,$CE,$C4,$C0,$C4,$CE,$C4,$00
+ $5D0B DEFB $47,$E7,$47,$07,$47,$E7,$47,$07
+ $5D13 DEFB $FF,$FF,$FF,$00,$00,$00,$00,$FC
+ $5D1B DEFB $47,$E7,$47,$07,$47,$E7,$47,$00
+ $5D23 DEFB $FC,$FC,$00,$00,$00,$00,$00,$00
+ $5D2B DEFB $44,$EE,$44,$00,$78,$CC,$CC,$FC
+ $5D33 DEFB $CC,$CC,$CC,$00,$44,$EE,$44,$00
+ $5D3B DEFB $44,$EE,$44,$00,$20,$50,$50,$20
+ $5D43 DEFB $54,$88,$74,$00,$44,$EE,$44,$00
+ $5D4B DEFB $44,$EE,$44,$00,$FC,$C0,$C0,$F8
+ $5D53 DEFB $C0,$C0,$C0,$00,$44,$EE,$44,$00
+ $5D5B DEFB $44,$EE,$44,$00,$78,$CC,$C0,$78
+ $5D63 DEFB $0C,$CC,$78,$00,$44,$EE,$44,$00
+ $5D6B DEFB $44,$EE,$44,$00,$78,$CC,$CC,$CC
+ $5D73 DEFB $CC,$CC,$78,$00,$44,$EE,$44,$00
+ $5D7B DEFB $44,$EE,$44,$00,$FC,$30,$30,$30
+ $5D83 DEFB $30,$30,$30,$00,$44,$EE,$44,$00
+ $5D8B DEFB $44,$EE,$44,$00,$C6,$C6,$C6,$C6
+ $5D93 DEFB $D6,$EE,$44,$00,$44,$EE,$44,$00
+ $5D9B DEFB $44,$EE,$44,$00,$F8,$CC,$CC,$F0
+ $5DA3 DEFB $CC,$CC,$CC,$00,$44,$EE,$44,$00
+ $5DAB DEFB $44,$EE,$44,$00,$FC,$C0,$C0,$F0
+ $5DB3 DEFB $C0,$C0,$FC,$00,$44,$EE,$44,$00
+ $5DBB DEFB $44,$EE,$44,$00,$00,$00,$00,$00
+ $5DC3 DEFB $00,$00,$00,$00,$44,$EE,$44,$00
+ $5DCB DEFB $3C,$42,$99,$A1,$A1,$99,$42,$3C
+ $5DD3 DEFB $0F,$33,$4F,$5F,$B8,$B0,$F0,$F0
+ $5DDB DEFB $F8,$FE,$FF,$FF,$1F,$0E,$00,$00
+ $5DE3 DEFB $F0,$F0,$F0,$F8,$7F,$7F,$3F,$0F
+ $5DEB DEFB $00,$00,$0E,$13,$EF,$FF,$FE,$F8
+ $5DF3 DEFB $70,$98,$B8,$F8,$F8,$F8,$FF,$FF
+ $5DFB DEFB $0E,$13,$17,$1F,$1F,$1F,$FF,$FF
+ $5E03 DEFB $FF,$FF,$F8,$F8,$F8,$F8,$F8,$70
+ $5E0B DEFB $FF,$FF,$1F,$1F,$1F,$1F,$1F,$0E
+ $5E13 DEFB $70,$98,$B8,$F8,$F8,$F8,$F8,$F8
+ $5E1B DEFB $0E,$19,$1D,$1F,$1F,$1F,$1F,$1F
+ $5E23 DEFB $F8,$F8,$FC,$FF,$7F,$7F,$3F,$0F
+ $5E2B DEFB $1F,$1F,$3F,$FF,$FE,$FE,$FC,$F0
+ $5E33 DEFB $70,$98,$B8,$F8,$F8,$F9,$FF,$FF
+ $5E3B DEFB $0E,$13,$37,$7E,$FC,$F8,$F0,$E0
+ $5E43 DEFB $FF,$FF,$F9,$F8,$F8,$F8,$F8,$70
+ $5E4B DEFB $E0,$F0,$F8,$FC,$7E,$3F,$1F,$0E
+ $5E53 DEFB $7F,$9F,$BF,$FF,$7F,$07,$07,$07
+ $5E5B DEFB $FE,$FF,$FF,$FF,$FE,$E0,$E0,$E0
+ $5E63 DEFB $07,$07,$07,$7F,$9F,$BF,$FF,$7F
+ $5E6B DEFB $E0,$E0,$E0,$FE,$FF,$FF,$FF,$FE
+ $5E73 DEFB $7F,$CF,$BF,$BF,$F8,$F8,$FF,$FF
+ $5E7B DEFB $FE,$FF,$FF,$FE,$00,$00,$F8,$FC
+ $5E83 DEFB $FF,$FF,$F8,$F8,$FF,$FF,$FF,$7F
+ $5E8B DEFB $FC,$F8,$00,$00,$FE,$FF,$FF,$FE
+ $5E93 DEFB $0F,$33,$4F,$5F,$B8,$B0,$F0,$F1
+ $5E9B DEFB $FE,$FF,$FF,$FE,$00,$00,$FE,$3F
+ $5EA3 DEFB $F1,$F0,$F0,$F8,$7F,$7F,$3F,$0F
+ $5EAB DEFB $7F,$FF,$1F,$1F,$FE,$FE,$FC,$F0
+ $5EB3 DEFB $00,$05,$2A,$50,$80,$C0,$E0,$F5
+ $5EBB DEFB $80,$40,$28,$14,$02,$47,$EF,$FF
+ $5EC3 DEFB $FF,$7F,$7F,$3F,$1F,$0F,$03,$00
+ $5ECB DEFB $FF,$FE,$FE,$FC,$F8,$F0,$C0,$00
+ $5ED3 DEFB $01,$07,$0F,$1F,$3F,$3F,$7F,$7F
+ $5EDB DEFB $F0,$E8,$C4,$88,$04,$82,$04,$82
+ $5EE3 DEFB $7F,$7F,$3F,$3F,$1F,$0F,$07,$01
+ $5EEB DEFB $C1,$E2,$C4,$88,$C4,$E8,$F0,$E0
+
+; Loader entry point
+;
+; Clear the screen
+c$5EF3 LD A,$07      ;
+ $5EF5 LD ($5C48),A  ;
+ $5EF8 LD HL,$5AFF   ;
+ $5EFB LD BC,$1B00   ;
+*$5EFE LD (HL),$00   ;
+ $5F00 DEC HL        ;
+ $5F01 DEC BC        ;
+ $5F02 LD A,B        ;
+ $5F03 OR C          ;
+ $5F04 JR NZ,$5EFE   ;
+ $5F06 XOR A         ;
+ $5F07 OUT ($FE),A   ;
+; Print the loading screen text
+ $5F09 LD H,$17      ;
+ $5F0B LD C,$18      ;
+ $5F0D LD DE,$601C   ;
+*$5F10 LD B,$20      ;
+ $5F12 LD L,$00      ;
+*$5F14 LD A,(DE)     ;
+ $5F15 INC DE        ;
+ $5F16 CALL $5FC9    ;
+ $5F19 INC L         ;
+ $5F1A DJNZ $5F14    ;
+ $5F1C DEC H         ;
+ $5F1D DEC C         ;
+ $5F1E JR NZ,$5F10   ;
+; Print the loading screen attributes
+ $5F20 LD HL,$5800   ;
+ $5F23 LD C,$02      ;
+*$5F25 LD A,$07      ;
+ $5F27 LD B,$08      ;
+ $5F29 CALL $5FC4    ;
+ $5F2C LD A,$05      ;
+ $5F2E LD B,$10      ;
+ $5F30 CALL $5FC4    ;
+ $5F33 LD A,$07      ;
+ $5F35 LD B,$08      ;
+ $5F37 CALL $5FC4    ;
+ $5F3A DEC C         ;
+ $5F3B JR NZ,$5F25   ;
+ $5F3D LD A,$06      ;
+ $5F3F LD B,$60      ;
+ $5F41 CALL $5FC4    ;
+ $5F44 LD A,$07      ;
+ $5F46 LD B,$2B      ;
+ $5F48 CALL $5FC4    ;
+ $5F4B LD A,$85      ;
+ $5F4D LD B,$0A      ;
+ $5F4F CALL $5FC4    ;
+ $5F52 LD A,$07      ;
+ $5F54 LD B,$0C      ;
+ $5F56 CALL $5FC4    ;
+ $5F59 LD A,$10      ;
+ $5F5B LD B,$1E      ;
+ $5F5D CALL $5FC4    ;
+ $5F60 INC HL        ;
+ $5F61 LD A,$17      ;
+ $5F63 LD C,$05      ;
+*$5F65 LD B,$1E      ;
+ $5F67 INC HL        ;
+ $5F68 CALL $5FC4    ;
+ $5F6B INC HL        ;
+ $5F6C DEC C         ;
+ $5F6D JR NZ,$5F65   ;
+ $5F6F LD A,$02      ;
+ $5F71 LD B,$1E      ;
+ $5F73 INC HL        ;
+ $5F74 CALL $5FC4    ;
+ $5F77 INC HL        ;
+ $5F78 LD A,$05      ;
+ $5F7A LD B,$A0      ;
+ $5F7C CALL $5FC4    ;
+ $5F7F INC HL        ;
+ $5F80 LD A,$10      ;
+ $5F82 LD B,$1E      ;
+ $5F84 CALL $5FC4    ;
+ $5F87 LD C,$03      ;
+*$5F89 INC HL        ;
+ $5F8A INC HL        ;
+ $5F8B LD A,$17      ;
+ $5F8D LD B,$1E      ;
+ $5F8F CALL $5FC4    ;
+ $5F92 DEC C         ;
+ $5F93 JR NZ,$5F89   ;
+ $5F95 INC HL        ;
+ $5F96 INC HL        ;
+ $5F97 LD A,$02      ;
+ $5F99 LD B,$1E      ;
+ $5F9B CALL $5FC4    ;
+; Load the error jump routine
+ $5F9E LD IX,$5C3D   ;
+ $5FA2 LD DE,$0002   ;
+ $5FA5 SCF           ;
+ $5FA6 LD A,$FF      ;
+ $5FA8 CALL $0556    ;
+; Load the game
+ $5FAB LD IX,$8214   ;
+ $5FAF LD DE,$49D4   ;
+ $5FB2 SCF           ;
+ $5FB3 LD A,$FF      ;
+ $5FB5 CALL $0556    ;
+ $5FB8 LD HL,$5DC0   ;
+; Run the game
+ $5FBB LD ($5C63),HL ;
+ $5FBE LD ($5C65),HL ;
+ $5FC1 JP $A410      ;
+
+; Print a series of attributes
+;
+; Used by the routine at #R$5EF3.
+;
+; HL Attribute address
+; B Length
+; A Attribute to be filled
+c$5FC4 LD (HL),A     ;
+ $5FC5 INC HL        ;
+ $5FC6 DJNZ $5FC4    ;
+ $5FC8 RET           ;
+
+; Print a character
+;
+; Used by the routine at #R$5EF3.
+;
+; A The character to be printed. Either in ASCII, or if $60 or above, bits 0-4
+; . specify an 8 byte offset from #R$5CE3
+; H y co-ordinate
+; L x co-ordinate
+c$5FC9 PUSH HL       ;
+ $5FCA PUSH BC       ;
+ $5FCB PUSH DE       ;
+ $5FCC PUSH AF       ;
+ $5FCD EX DE,HL      ;
+ $5FCE LD A,D        ;
+ $5FCF LD HL,$4000   ;
+ $5FD2 LD BC,$0800   ;
+ $5FD5 CP $10        ;
+ $5FD7 JR NC,$5FDF   ;
+ $5FD9 CP $08        ;
+ $5FDB JR NC,$5FDE   ;
+ $5FDD ADD HL,BC     ;
+*$5FDE ADD HL,BC     ;
+*$5FDF AND $07       ;
+ $5FE1 XOR $07       ;
+ $5FE3 SLA A         ;
+ $5FE5 SLA A         ;
+ $5FE7 SLA A         ;
+ $5FE9 SLA A         ;
+ $5FEB SLA A         ;
+ $5FED LD C,A        ;
+ $5FEE LD B,$00      ;
+ $5FF0 ADD HL,BC     ;
+ $5FF1 LD C,E        ;
+ $5FF2 ADD HL,BC     ;
+ $5FF3 POP AF        ;
+ $5FF4 PUSH AF       ;
+ $5FF5 LD DE,$3C00   ;
+ $5FF8 CP $5F        ;
+ $5FFA JR C,$6001    ;
+ $5FFC LD DE,$5CE3   ;
+ $5FFF SUB $60       ;
+*$6001 LD C,A        ;
+ $6002 XOR A         ;
+ $6003 SLA C         ;
+ $6005 RLA           ;
+ $6006 SLA C         ;
+ $6008 RLA           ;
+ $6009 SLA C         ;
+ $600B RLA           ;
+ $600C LD B,A        ;
+ $600D EX DE,HL      ;
+ $600E ADD HL,BC     ;
+ $600F LD B,$08      ;
+*$6011 LD A,(HL)     ;
+ $6012 LD (DE),A     ;
+ $6013 INC HL        ;
+ $6014 INC D         ;
+ $6015 DJNZ $6011    ;
+ $6017 POP AF        ;
+ $6018 POP DE        ;
+ $6019 POP BC        ;
+ $601A POP HL        ;
+ $601B RET           ;
+
+; Loading text
+t$601C DEFM "   "
+ $601F DEFB $9A
+ $6020 DEFB $9B
+ $6021 DEFM "   abikm{oqmsuiwyef   "
+ $6037 DEFB $9E
+ $6038 DEFB $9F
+ $6039 DEFM "      "
+ $603F DEFB $9C
+ $6040 DEFB $9D
+ $6041 DEFM "   cdjln|prntvjxzgh   "
+ $6057 DEFB $A0
+ $6058 DEFB $A1
+ $6059 DEFM "                                    ~"
+ $607E DEFB $7F
+ $607F DEFM " "
+ $6080 DEFB $82
+ $6081 DEFB $83
+ $6082 DEFM " "
+ $6083 DEFB $86
+ $6084 DEFB $87
+ $6085 DEFM " ~"
+ $6087 DEFB $7F
+ $6088 DEFM " "
+ $6089 DEFB $8A
+ $608A DEFB $8B
+ $608B DEFM " "
+ $608C DEFB $8E
+ $608D DEFB $8F
+ $608E DEFM " "
+ $608F DEFB $92
+ $6090 DEFB $93
+ $6091 DEFM "  "
+ $6093 DEFB $92
+ $6094 DEFB $93
+ $6095 DEFM " "
+ $6096 DEFB $96
+ $6097 DEFB $97
+ $6098 DEFM " "
+ $6099 DEFB $96
+ $609A DEFB $97
+ $609B DEFM "  "
+ $609D DEFB $80
+ $609E DEFB $81
+ $609F DEFM " "
+ $60A0 DEFB $84
+ $60A1 DEFB $85
+ $60A2 DEFM " "
+ $60A3 DEFB $88
+ $60A4 DEFB $89
+ $60A5 DEFM " "
+ $60A6 DEFB $80
+ $60A7 DEFB $81
+ $60A8 DEFM " "
+ $60A9 DEFB $8C
+ $60AA DEFB $8D
+ $60AB DEFM " "
+ $60AC DEFB $90
+ $60AD DEFB $91
+ $60AE DEFM " "
+ $60AF DEFB $94
+ $60B0 DEFB $95
+ $60B1 DEFM "  "
+ $60B3 DEFB $94
+ $60B4 DEFB $95
+ $60B5 DEFM " "
+ $60B6 DEFB $98
+ $60B7 DEFB $99
+ $60B8 DEFM " "
+ $60B9 DEFB $98
+ $60BA DEFB $99
+ $60BB DEFM "                                            IS LOADING            "
+ $60FD DEFB $60
+ $60FE DEFB $60
+ $60FF DEFB $60
+ $6100 DEFB $60
+ $6101 DEFB $60
+ $6102 DEFB $60
+ $6103 DEFB $60
+ $6104 DEFB $60
+ $6105 DEFB $60
+ $6106 DEFB $60
+ $6107 DEFB $60
+ $6108 DEFB $60
+ $6109 DEFB $60
+ $610A DEFB $60
+ $610B DEFB $60
+ $610C DEFB $60
+ $610D DEFB $60
+ $610E DEFB $60
+ $610F DEFB $60
+ $6110 DEFB $60
+ $6111 DEFB $60
+ $6112 DEFB $60
+ $6113 DEFB $60
+ $6114 DEFB $60
+ $6115 DEFB $60
+ $6116 DEFB $60
+ $6117 DEFB $60
+ $6118 DEFB $60
+ $6119 DEFB $60
+ $611A DEFB $60
+ $611B DEFM "   USE FOUR DIRECTION KEYS WITH                                   "
+ $615D DEFM " A JUMP KEY TO GUIDE YOUR MAN                                     "
+ $619F DEFM " AND COLLECT A DOZEN EGGS     "
+ $61BD DEFB $60
+ $61BE DEFB $60
+ $61BF DEFB $60
+ $61C0 DEFB $60
+ $61C1 DEFB $60
+ $61C2 DEFB $60
+ $61C3 DEFB $60
+ $61C4 DEFB $60
+ $61C5 DEFB $60
+ $61C6 DEFB $60
+ $61C7 DEFB $60
+ $61C8 DEFB $60
+ $61C9 DEFB $60
+ $61CA DEFB $60
+ $61CB DEFB $60
+ $61CC DEFB $60
+ $61CD DEFB $60
+ $61CE DEFB $60
+ $61CF DEFB $60
+ $61D0 DEFB $60
+ $61D1 DEFB $60
+ $61D2 DEFB $60
+ $61D3 DEFB $60
+ $61D4 DEFB $60
+ $61D5 DEFB $60
+ $61D6 DEFB $60
+ $61D7 DEFB $60
+ $61D8 DEFB $60
+ $61D9 DEFB $60
+ $61DA DEFB $60
+ $61DB DEFM "   YOU MAY CHANGE THE DIRECTION                                   "
+ $621D DEFM "AND JUMP KEYS.  THERE ARE ALSO                                    "
+ $625F DEFM " THE FOLLOWING FIXED KEYS     "
+ $627D DEFB $60
+ $627E DEFB $60
+ $627F DEFB $60
+ $6280 DEFB $60
+ $6281 DEFB $60
+ $6282 DEFB $60
+ $6283 DEFB $60
+ $6284 DEFB $60
+ $6285 DEFB $60
+ $6286 DEFB $60
+ $6287 DEFB $60
+ $6288 DEFB $60
+ $6289 DEFB $60
+ $628A DEFB $60
+ $628B DEFB $60
+ $628C DEFB $60
+ $628D DEFB $60
+ $628E DEFB $60
+ $628F DEFB $60
+ $6290 DEFB $60
+ $6291 DEFB $60
+ $6292 DEFB $60
+ $6293 DEFB $60
+ $6294 DEFB $60
+ $6295 DEFB $60
+ $6296 DEFB $60
+ $6297 DEFB $60
+ $6298 DEFB $60
+ $6299 DEFB $60
+ $629A DEFB $60
+ $629B DEFM "    CAPS SHIFT & H........HOLD                                    "
+ $62DD DEFM "  CAPS SHIFT & A.......ABORT    "
+ $62FD DEFB $60
+ $62FE DEFB $60
+ $62FF DEFB $60
+ $6300 DEFB $60
+ $6301 DEFB $60
+ $6302 DEFB $60
+ $6303 DEFB $60
+ $6304 DEFB $60
+ $6305 DEFB $60
+ $6306 DEFB $60
+ $6307 DEFB $60
+ $6308 DEFB $60
+ $6309 DEFB $60
+ $630A DEFB $60
+ $630B DEFB $60
+ $630C DEFB $60
+ $630D DEFB $60
+ $630E DEFB $60
+ $630F DEFB $60
+ $6310 DEFB $60
+ $6311 DEFB $60
+ $6312 DEFB $60
+ $6313 DEFB $60
+ $6314 DEFB $60
+ $6315 DEFB $60
+ $6316 DEFB $60
+ $6317 DEFB $60
+ $6318 DEFB $60
+ $6319 DEFB $60
+ $631A DEFB $60
+ $631B DEFM " "
+

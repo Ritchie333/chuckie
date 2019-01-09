@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chuckie Egg: Trivia</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+
+</head>
+<body class="Facts">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html">Chuckie Egg</a></td>
+<td class="page-header">Trivia</td>
+</tr>
+</table>
+<ul class="contents">
+<li><a href="#levels">Levels</a></li>
+<li><a href="#mother_duck">Mother duck</a></li>
+<li><a href="#theme_tunes">Theme tunes</a></li>
+<li><a href="#speech">Speech</a></li>
+</ul>
+<div><span id="levels"></span></div>
+<div class="box box-1">
+<div class="box-title">Levels</div>
+<div class="paragraph">
+There are 8 basic levels in the game. Each set of 8 has
+an increasing level of difficulty set in the game logic
+<table class="map">
+<tr>
+<td class="" colspan="1" rowspan="1">1 -  8</td>
+<td class="" colspan="1" rowspan="1">Ducklings</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">9 - 16</td>
+<td class="" colspan="1" rowspan="1">Mother duck</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">17 - 24</td>
+<td class="" colspan="1" rowspan="1">Ducklings and mother duck</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">25 - 32</td>
+<td class="" colspan="1" rowspan="1">Double ducklings and mother duck</td>
+</tr>
+<tr>
+<td class="" colspan="1" rowspan="1">33 - 40</td>
+<td class="" colspan="1" rowspan="1">Fast double ducklings and mother duck</td>
+</tr>
+</table>
+After this, level 41 is the same as level 33, and so on ad infinitum,
+except with the time gradually being reduced to 400 at level 65.
+</div>
+<div class="paragraph">
+After level 99, the counter overflows to 0, but the internal level
+counter at <a href="../asm/28395.html">6EEB</a> is an 8-bit number, so play can continue,
+wrapping round again and then to level 255 (displayed as "55"),
+after which level 0 is on the full difficulty level, then the
+level counter finally overflows to 1 and difficulty drops to the
+easiest. Unlike Pac-Man, there is no other bug so play can
+continue until the heat death of the universe....
+</div>
+</div>
+<div><span id="mother_duck"></span></div>
+<div class="box box-2">
+<div class="box-title">Mother duck</div>
+<div class="paragraph">
+The mother duck is in play on every level, but its updated location
+in the routine at <a href="../asm/41160.html">A0C8</a> is ignored on levels below 9. The player
+will still lose a life if they walk into her.
+</div>
+</div>
+<div><span id="theme_tunes"></span></div>
+<div class="box box-1">
+<div class="box-title">Theme tunes</div>
+<div class="paragraph">
+The tune at the start of the game is "The Birdie Song" which was
+a top five hit a few years before the game was released. It is
+one of the most annoying and infuriating tunes of all time,
+with the possible exception of Mr Blobby.
+</div>
+<div class="paragraph">
+The tune played when the player loses a life is a brief extract
+of the traditional Spanish guitar piece "Romance Anonimo".
+</div>
+</div>
+<div><span id="speech"></span></div>
+<div class="box box-2">
+<div class="box-title">Speech</div>
+<div class="paragraph">
+The game supports the Fuller Orator, a hardware extension to the Fuller Box
+audio box with a dedicated speech module. The routine for this is at <a href="../asm/40130.html">9CC2</a>.
+</div>
+</div>
+<footer>
+<div class="release"></div>
+<div class="copyright">Copyright Nigel Alderton 1983. This disassembly by Ritchie Swann, 2019</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
+</footer>
+</body>
+</html>
