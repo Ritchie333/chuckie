@@ -98,13 +98,29 @@ D $8F30 #UDG$8F30,6,,2#UDG$8F31,6,,2 #UDG$8F50,6,,2#UDG$8F51,6,,2
 D $8F30 #UDG$8F40,6,,2#UDG$8F41,6,,2 #UDG$8F60,6,,2#UDG$8F61,6,,2
 b $8F70
 b $8F90 Sprite - player climbing ladder
+D $8F90 #UDG$8F90,6,,2#UDG$8F91,6,,2 #UDG$8FB0,6,,2#UDG$8FB1,6,,2 #UDG$8FD0,6,,2#UDG$8FD1,6,,2 #UDG$8FF0,6,,2#UDG$8FF1,6,,2
+D $8F90 #UDG$8FA0,6,,2#UDG$8FA1,6,,2 #UDG$8FC0,6,,2#UDG$8FC1,6,,2 #UDG$8FE0,6,,2#UDG$8FE1,6,,2 #UDG$9000,6,,2#UDG$9001,6,,2
 b $9010 Sprite - duckling L
+D $9010 #UDG$9010,5,,2#UDG$9011,5,,2 
+D $9010 #UDG$9020,5,,2#UDG$9021,5,,2
 b $9030 Sprite - duckling R
+D $9030 #UDG$9030,5,,2#UDG$9031,5,,2
+D $9030 #UDG$9040,5,,2#UDG$9041,5,,2
 b $9050 Sprite - duckling climbing ladder
+D $9050 #UDG$9050,5,,2#UDG$9051,5,,2 #UDG$9070,5,,2#UDG$9071,5,,2
+D $9050 #UDG$9060,5,,2#UDG$9061,5,,2 #UDG$9080,5,,2#UDG$9081,5,,2
 b $9090 Sprite - duckling L
+D $9090 #UDG$9090,5,,2#UDG$9091,5,,2 
+D $9090 #UDG$90A0,5,,2#UDG$90A1,5,,2
 b $90B0 Sprite - duckling R
+D $90B0 #UDG$90B0,5,,2#UDG$90B1,5,,2 
+D $90B0 #UDG$90C0,5,,2#UDG$90C1,5,,2
 b $90D0 Sprite - duckling eating corn L
+D $90D0 #UDG$90D0,5,,2#UDG$90D1,5,,2 
+D $90D0 #UDG$90E0,5,,2#UDG$90E1,5,,2
 b $90F0 Sprite - duckling eating corn R
+D $90F0 #UDG$90F0,5,,2#UDG$90F1,5,,2 
+D $90F0 #UDG$9100,5,,2#UDG$9101,5,,2
 b $9110
 c $911E Move the ducklings
 c $9265 See if any duckling can eat corn
