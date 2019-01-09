@@ -280,246 +280,43 @@ b$8214 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $8264 DEFB $17,$F7,$1D,$EF,$1E,$FB,$1E,$FD
  $826C DEFB $1D,$DF,$1E,$DF,$1B,$7F,$1E,$F7
 
-; Scrolling message for title page
-t$8274 DEFB $00
- $8275 DEFB $00
- $8276 DEFB $00
- $8277 DEFB $00
- $8278 DEFB $00
- $8279 DEFB $00
- $827A DEFB $00
- $827B DEFB $00
- $827C DEFB $00
- $827D DEFB $00
- $827E DEFB $00
- $827F DEFB $00
- $8280 DEFB $00
- $8281 DEFB $00
- $8282 DEFB $00
- $8283 DEFB $00
- $8284 DEFB $00
- $8285 DEFB $00
- $8286 DEFB $00
- $8287 DEFB $00
- $8288 DEFB $00
- $8289 DEFB $00
- $828A DEFB $00
- $828B DEFB $00
- $828C DEFB $00
- $828D DEFB $00
- $828E DEFB $00
- $828F DEFB $00
- $8290 DEFB $00
- $8291 DEFB $00
- $8292 DEFB $00
- $8293 DEFB $00
- $8294 DEFB $00
- $8295 DEFB $00
- $8296 DEFB $00
- $8297 DEFB $00
- $8298 DEFB $00
- $8299 DEFB $00
- $829A DEFB $00
- $829B DEFB $00
- $829C DEFB $00
- $829D DEFB $00
- $829E DEFB $00
- $829F DEFB $00
- $82A0 DEFB $00
- $82A1 DEFB $00
- $82A2 DEFB $00
- $82A3 DEFB $00
- $82A4 DEFB $00
- $82A5 DEFB $00
- $82A6 DEFB $00
- $82A7 DEFB $00
- $82A8 DEFB $00
- $82A9 DEFB $00
- $82AA DEFB $00
- $82AB DEFB $00
- $82AC DEFB $00
- $82AD DEFB $00
- $82AE DEFB $00
- $82AF DEFB $00
- $82B0 DEFB $00
- $82B1 DEFB $00
- $82B2 DEFB $00
- $82B3 DEFB $00
- $82B4 DEFB $00
- $82B5 DEFB $00
- $82B6 DEFB $00
- $82B7 DEFB $00
- $82B8 DEFB $00
- $82B9 DEFB $00
- $82BA DEFB $00
- $82BB DEFB $00
- $82BC DEFB $00
- $82BD DEFB $00
- $82BE DEFB $00
- $82BF DEFB $00
- $82C0 DEFB $00
- $82C1 DEFB $00
- $82C2 DEFB $00
- $82C3 DEFB $00
- $82C4 DEFB $00
- $82C5 DEFB $00
- $82C6 DEFB $00
- $82C7 DEFB $00
- $82C8 DEFB $00
- $82C9 DEFB $00
- $82CA DEFB $00
- $82CB DEFB $00
- $82CC DEFB $00
- $82CD DEFB $00
- $82CE DEFB $00
- $82CF DEFB $00
- $82D0 DEFB $00
- $82D1 DEFB $00
- $82D2 DEFB $00
- $82D3 DEFB $00
- $82D4 DEFB $00
- $82D5 DEFB $00
- $82D6 DEFB $00
- $82D7 DEFB $00
- $82D8 DEFB $00
- $82D9 DEFB $00
- $82DA DEFB $00
- $82DB DEFB $00
- $82DC DEFB $00
- $82DD DEFB $00
- $82DE DEFB $00
- $82DF DEFB $00
- $82E0 DEFB $00
- $82E1 DEFB $00
- $82E2 DEFB $00
- $82E3 DEFB $00
- $82E4 DEFB $00
- $82E5 DEFB $00
- $82E6 DEFB $00
- $82E7 DEFB $00
- $82E8 DEFB $00
- $82E9 DEFB $00
- $82EA DEFB $00
- $82EB DEFB $00
- $82EC DEFB $00
- $82ED DEFB $00
- $82EE DEFB $00
- $82EF DEFB $00
- $82F0 DEFB $00
- $82F1 DEFB $00
- $82F2 DEFB $00
- $82F3 DEFB $00
- $82F4 DEFB $00
- $82F5 DEFB $00
- $82F6 DEFB $00
- $82F7 DEFB $00
- $82F8 DEFB $00
- $82F9 DEFB $00
- $82FA DEFB $00
- $82FB DEFB $00
- $82FC DEFB $00
- $82FD DEFB $00
- $82FE DEFB $00
- $82FF DEFB $00
- $8300 DEFB $00
- $8301 DEFB $00
- $8302 DEFB $00
- $8303 DEFB $00
- $8304 DEFB $00
- $8305 DEFB $00
- $8306 DEFB $00
- $8307 DEFB $00
- $8308 DEFB $00
- $8309 DEFB $00
- $830A DEFB $00
- $830B DEFB $00
- $830C DEFB $00
- $830D DEFB $00
- $830E DEFB $00
- $830F DEFB $00
- $8310 DEFB $00
- $8311 DEFB $00
- $8312 DEFB $00
- $8313 DEFB $00
- $8314 DEFB $00
- $8315 DEFB $00
- $8316 DEFB $00
- $8317 DEFB $00
- $8318 DEFB $00
- $8319 DEFB $00
- $831A DEFB $00
- $831B DEFB $00
- $831C DEFB $00
- $831D DEFB $00
- $831E DEFB $00
- $831F DEFB $00
- $8320 DEFB $00
- $8321 DEFB $00
- $8322 DEFB $00
- $8323 DEFB $00
- $8324 DEFB $00
- $8325 DEFB $00
- $8326 DEFB $00
- $8327 DEFB $00
- $8328 DEFB $00
- $8329 DEFB $00
- $832A DEFB $00
- $832B DEFB $00
- $832C DEFB $00
- $832D DEFB $00
- $832E DEFB $00
- $832F DEFB $00
- $8330 DEFB $00
- $8331 DEFB $00
- $8332 DEFB $00
- $8333 DEFB $00
- $8334 DEFB $00
- $8335 DEFB $00
- $8336 DEFM "press"
- $833B DEFB $00
- $833C DEFM "R"
- $833D DEFB $00
- $833E DEFM "to"
- $8340 DEFB $00
- $8341 DEFM "redefine"
- $8349 DEFB $00
- $834A DEFM "keys"
- $834E DEFB $00
- $834F DEFB $00
- $8350 DEFM "press"
- $8355 DEFB $00
- $8356 DEFM "S"
- $8357 DEFB $00
- $8358 DEFM "to"
- $835A DEFB $00
- $835B DEFM "start"
- $8360 DEFB $00
- $8361 DEFM "game"
- $8365 DEFB $00
- $8366 DEFB $00
- $8367 DEFM "press"
- $836C DEFB $00
- $836D DEFM "1,2"
- $8370 DEFB $00
- $8371 DEFM "or"
- $8373 DEFB $00
- $8374 DEFM "3"
- $8375 DEFB $00
- $8376 DEFM "to"
- $8378 DEFB $00
- $8379 DEFM "select"
- $837F DEFB $00
- $8380 DEFM "key"
- $8383 DEFB $00
- $8384 DEFM "type"
- $8388 DEFB $00
- $8389 DEFB $00
- $838A DEFB $00
- $838B DEFB $00
- $838C DEFB $00
- $838D DEFB $00
- $838E DEFB $00
- $838F DEFB $00
+; Scrolling message buffer
+b$8274 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $827C DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $8284 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $828C DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $8294 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $829C DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82A4 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82AC DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82B4 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82BC DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82C4 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82CC DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82D4 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82DC DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82E4 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82EC DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82F4 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $82FC DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $8304 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $830C DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $8314 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $831C DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $8324 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $832C DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $8334 DEFB $00,$00,$70,$72,$65,$73,$73,$00
+ $833C DEFB $52,$00,$74,$6F,$00,$72,$65,$64
+ $8344 DEFB $65,$66,$69,$6E,$65,$00,$6B,$65
+ $834C DEFB $79,$73,$00,$00,$70,$72,$65,$73
+ $8354 DEFB $73,$00,$53,$00,$74,$6F,$00,$73
+ $835C DEFB $74,$61,$72,$74,$00,$67,$61,$6D
+ $8364 DEFB $65,$00,$00,$70,$72,$65,$73,$73
+ $836C DEFB $00,$31,$2C,$32,$00,$6F,$72,$00
+ $8374 DEFB $33,$00,$74,$6F,$00,$73,$65,$6C
+ $837C DEFB $65,$63,$74,$00,$6B,$65,$79,$00
+ $8384 DEFB $74,$79,$70,$65,$00,$00,$00,$00
+ $838C DEFB $00,$00,$00,$00
 
 ; Instructions
 t$8390 DEFM "keys are user defineable.      "
@@ -4668,7 +4465,7 @@ c$AAF4 LD D,$00      ;
  $AB16 DJNZ $AAFD    ;
  $AB18 RET           ;
 
-; Routine at AB19
+; Display a line of text
 ;
 ; Used by the routine at #R$AA49.
 c$AB19 PUSH AF       ;
@@ -4832,23 +4629,42 @@ b$ABE9 DEFB $C9,$01,$10,$13,$17,$1E,$20,$21
 t$ABF2 DEFM "high score table"
 
 ; Redefine keys
-t$AC02 DEFM "press the key you wish to use tomove up   move down move left move"
- $AC44 DEFM " rightjump      "
+t$AC02 DEFM "press the key you wish to use to"
 
-; Intro screen text
-t$AC54 DEFB $97
- $AC55 DEFB $99
- $AC56 DEFM "mnb"
- $AC59 DEFB $9A
- $AC5A DEFM "lkjhpoiuy0987612345qwertasdfg"
- $AC77 DEFB $98
- $AC78 DEFM "zxcv{"
+; Move up
+t$AC22 DEFM "move up   "
+
+; Move down
+t$AC2C DEFM "move down "
+
+; Move left
+t$AC36 DEFM "move left "
+
+; Move right
+t$AC40 DEFM "move right"
+
+; Jump
+t$AC4A DEFM "jump"
+
+; Intro screen UDGs
+b$AC4E DEFB $20,$20,$20,$20,$20,$20,$97,$99
+ $AC56 DEFB $6D,$6E,$62,$9A,$6C,$6B,$6A,$68
+ $AC5E DEFB $70,$6F,$69,$75,$79,$30,$39,$38
+ $AC66 DEFB $37,$36,$31,$32,$33,$34,$35,$71
+ $AC6E DEFB $77,$65,$72,$74,$61,$73,$64,$66
+ $AC76 DEFB $67,$98,$7A,$78,$63,$76
+
+; Intro scrolling message
+t$AC7C DEFM "{"
  $AC7D DEFB $00
  $AC7E DEFM "press S to start game {"
  $AC95 DEFB $00
  $AC96 DEFM "press R to redefine keys {"
  $ACB0 DEFB $00
- $ACB1 DEFM "press I for instructions {"
+ $ACB1 DEFM "press I for instructions "
+
+; Instructions scrolling message
+t$ACCA DEFM "{"
  $ACCB DEFB $00
  $ACCC DEFM "press S to start game {"
  $ACE3 DEFB $00
@@ -4860,26 +4676,44 @@ t$AC54 DEFB $97
 t$AD21 DEFM "1,2,3 or 4 players ?          "
 
 ; Game over
-t$AD3F DEFM "game over player 1 level "
- $AD58 DEFB $9E
- $AD59 DEFB $9F
- $AD5A DEFM "OUT OF TIME !   PLAYER  1                    well  done!  you have"
- $AD9C DEFM " beaten one of todays highest scores.                 please type "
- $ADDE DEFM " in your name or initials then  press  ENTER. "
+t$AD3F DEFM "game over "
+
+; Player
+t$AD49 DEFM "player 1 "
+
+; Level
+t$AD52 DEFM "level "
+
+; Data block at AD58
+b$AD58 DEFB $9E
+
+; Data block at AD59
+b$AD59 DEFB $9F
+
+; Out of time
+t$AD5A DEFM "OUT OF TIME !"
+
+; High score message
+t$AD67 DEFM "   PLAYER  1   "
+ $AD76 DEFM "               "
+ $AD85 DEFM "  well  done!  "
+ $AD94 DEFM "you have beaten"
+ $ADA3 DEFM " one of todays "
+ $ADB2 DEFM "highest scores."
+ $ADC1 DEFM "               "
+ $ADD0 DEFM "  please type  "
+ $ADDF DEFM "in your name or"
+ $ADEE DEFM " initials then "
+ $ADFD DEFM " press  ENTER. "
 
 ; Theme tune
-b$AE0C DEFB $01,$10,$01,$10,$01,$12,$01,$12
- $AE14 DEFB $01,$0D,$01,$0D,$02,$10,$01,$10
- $AE1C DEFB $01,$10,$01,$12,$01,$12,$01,$0D
- $AE24 DEFB $01,$0D,$02,$10,$01,$10,$01,$10
- $AE2C DEFB $02,$12,$02,$15,$02,$14,$02,$14
- $AE34 DEFB $02,$12,$02,$10,$02,$0E,$01,$0E
- $AE3C DEFB $01,$0E,$01,$10,$01,$10,$01,$0B
- $AE44 DEFB $01,$0B,$02,$0E,$01,$0E,$01,$0E
- $AE4C DEFB $01,$10,$01,$10,$01,$0B,$01,$0B
- $AE54 DEFB $02,$0E,$01,$0E,$01,$0E,$02,$10
- $AE5C DEFB $02,$12,$02,$13,$02,$10,$02,$0E
- $AE64 DEFB $02,$0B,$02,$07,$00,$00
+b$AE0C DEFM ""
+ $AE1B DEFM ""
+ $AE2A DEFM ""
+ $AE39 DEFM ""
+ $AE48 DEFM ""
+ $AE57 DEFM ""
+ $AE66 DEFM "  "
 
 ; Lose a life tune
 b$AE6A DEFB $02,$08,$02,$08,$02,$08,$02,$08

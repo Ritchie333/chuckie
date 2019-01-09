@@ -58,7 +58,7 @@ g $7373 Set to FF if the Fuller Orator is active
 g $7374 Current Fuller Orator data
 i $7376
 b $8214
-t $8274 Scrolling message for title page
+b $8274 Scrolling message buffer
 t $8390 Instructions
 b $84F0 UDGs
 D $84F0 #UDG$84F0 #UDG$84F8 #UDG$8500 #UDG$8508 #UDG$8510 #UDG$8518
@@ -222,7 +222,7 @@ c $AB7B
 c $AABA
 c $AAE4 Play a random sound
 c $AAF4
-c $AB19
+c $AB19 Display a line of text
 c $AB60 Play a note of a tune
 R $AB60 HL Pointer to the pitch and length, or 0 to mark the end
 c $AB7B Scroll a string of text on screen
@@ -232,9 +232,23 @@ c $ABAD Print the high score table
 b $ABE9 Sound directives
 t $ABF2 High score
 t $AC02 Redefine keys
-t $AC54 Intro screen text
+t $AC22 Move up
+t $AC2C Move down
+t $AC36 Move left
+t $AC40 Move right
+t $AC4A Jump
+b $AC4E Intro screen UDGs
+t $AC7C Intro scrolling message
+t $ACCA Instructions scrolling message
 t $AD21 Number of players
 t $AD3F Game over
+t $AD49 Player
+t $AD52 Level
+b $AD58
+b $AD59
+t $AD5A Out of time
+t $AD67 High score message
+T $AD67,$A5,$0F*$0C
 b $AE0C Theme tune
 b $AE6A Lose a life tune
 c $AE9C Run the current level until complete or a duck is hit
