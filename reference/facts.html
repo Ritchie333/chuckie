@@ -16,6 +16,7 @@
 <ul class="contents">
 <li><a href="#levels">Levels</a></li>
 <li><a href="#mother_duck">Mother duck</a></li>
+<li><a href="#character_name">Character name</a></li>
 <li><a href="#theme_tunes">Theme tunes</a></li>
 <li><a href="#speech">Speech</a></li>
 </ul>
@@ -51,13 +52,14 @@ After this, level 41 is the same as level 33, and so on ad infinitum,
 except with the time gradually being reduced to 400 at level 65.
 </div>
 <div class="paragraph">
-After level 99, the counter overflows to 0, but the internal level
-counter at <a href="../asm/28395.html">6EEB</a> is an 8-bit number, so play can continue,
-wrapping round again and then to level 255 (displayed as "55"),
-after which level 0 is on the full difficulty level, then the
-level counter finally overflows to 1 and difficulty drops to the
-easiest. Unlike Pac-Man, there is no other bug so play can
-continue until the heat death of the universe....
+The game display showing the current level at <a href="../asm/44700.html#44738">AEC2</a> can only accommodate two
+digits, but the internal counter at <a href="../asm/28395.html">6EEB</a> is an 8-bit unsigned number. Therefore,
+after level 99, the counter overflows to 0, but play can continue as it if were 100,
+wrapping round again to 200 and progressing to level 255 (displayed as "55"). After
+this, level 0 is on the full difficulty level, then the level counter finally overflows
+to 1 and difficulty drops to the easiest.
+Unlike Pac-Man, there is no other related bug so play can continue until the heat death of
+the universe....
 </div>
 </div>
 <div><span id="mother_duck"></span></div>
@@ -69,8 +71,17 @@ in the routine at <a href="../asm/41160.html">A0C8</a> is ignored on levels belo
 will still lose a life if they walk into her.
 </div>
 </div>
-<div><span id="theme_tunes"></span></div>
+<div><span id="character_name"></span></div>
 <div class="box box-1">
+<div class="box-title">Character name</div>
+<div class="paragraph">
+The game's protagonist is assumed to be called "Henhouse Harry"
+after Chuckie Egg II. However, no name is stored anywhere in
+the original.
+</div>
+</div>
+<div><span id="theme_tunes"></span></div>
+<div class="box box-2">
 <div class="box-title">Theme tunes</div>
 <div class="paragraph">
 The tune at the start of the game is "The Birdie Song" which was
@@ -84,7 +95,7 @@ of the traditional Spanish guitar piece "Romance Anonimo".
 </div>
 </div>
 <div><span id="speech"></span></div>
-<div class="box box-2">
+<div class="box box-1">
 <div class="box-title">Speech</div>
 <div class="paragraph">
 The game supports the Fuller Orator, a hardware extension to the Fuller Box
@@ -94,7 +105,7 @@ audio box with a dedicated speech module. The routine for this is at <a href="..
 <footer>
 <div class="release"></div>
 <div class="copyright">Copyright Nigel Alderton 1983. This disassembly by Ritchie Swann, 2019</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.1b1.</div>
 </footer>
 </body>
 </html>

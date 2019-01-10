@@ -20,7 +20,7 @@
 <td class="next"><span class="next-1">Next: <a href="43801.html">AB19</a></span></td>
 </tr>
 </table>
-<div class="description">AAF4: Routine at AAF4</div>
+<div class="description">AAF4: Return any key pressed</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="4">
@@ -29,11 +29,22 @@
 Used by the routines at <a href="43593.html">AA49</a> and <a href="43801.html">AB19</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input-1">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
+<tr>
+<td class="register">H</td>
+<td class="register-desc">On exit, holds the bitfields key matrix tested (input to port FE), or 0 for none</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">On exit, holds the keys pressed, or 0 for none</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">On exit, holds the 'nth' key matrix tested ( 0 - 9 )</td>
+</tr>
 </table>
 <table class="output-0">
 <tr class="asm-output-header">
@@ -180,7 +191,7 @@ Used by the routines at <a href="43593.html">AA49</a> and <a href="43801.html">A
 <footer>
 <div class="release"></div>
 <div class="copyright">Copyright Nigel Alderton 1983. This disassembly by Ritchie Swann, 2019</div>
-<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.0.</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.1b1.</div>
 </footer>
 </body>
 </html>

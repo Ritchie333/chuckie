@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chuckie Egg: Data structures</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="skoolkit.css" />
+
+</head>
+<body class="Data structures">
+<table class="header">
+<tr>
+<td class="logo"><a href="index.html">Chuckie Egg</a></td>
+<td class="page-header">Data structures</td>
+</tr>
+</table>
+<ul class="contents">
+<li><a href="#level_udgs">Level UDGs</a></li>
+</ul>
+<div><span id="level_udgs"></span></div>
+<div class="box box-1">
+<div class="box-title">Level UDGs</div>
+<div class="paragraph">
+As is well documented, the game has 8 maps that are repeated indefinitely with
+increasingly difficult levels of difficulty. Each map takes up 672 ($2A0) bytes
+from <a href="asm/46000.html">B3B0</a> to <a href="asm/50704.html">C610</a> inclusive, and simply consists of 21 sets of lines of
+32 characters, arranged from the bottom of the screen to the top.
+</div>
+<div class="paragraph">
+Each byte contains a UDG ID. This is multipled by 8 and added to <a href="asm/34032.html">84F0</a>, which
+contains the graphic to draw.
+</div>
+</div>
+<footer>
+<div class="release"></div>
+<div class="copyright">Copyright Nigel Alderton 1983. This disassembly by Ritchie Swann, 2019</div>
+<div class="created">Created using <a href="http://skoolkit.ca/">SkoolKit</a> 7.1b1.</div>
+</footer>
+</body>
+</html>

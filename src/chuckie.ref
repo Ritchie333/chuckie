@@ -5,6 +5,18 @@ Copyright=Copyright Nigel Alderton 1983. This disassembly by Ritchie Swann, 2019
 [OtherCode:Loading system]
 Source=chuckie_loader.skool
 
+[Page:Data structures]
+SectionPrefix=Data structures
+
+[Data structures:Level UDGs]
+As is well documented, the game has 8 maps that are repeated indefinitely with
+increasingly difficult levels of difficulty. Each map takes up 672 ($2A0) bytes
+from #R$B3B0 to #R$C610 inclusive, and simply consists of 21 sets of lines of
+32 characters, arranged from the bottom of the screen to the top.
+
+Each byte contains a UDG ID. This is multipled by 8 and added to #R$84F0, which
+contains the graphic to draw.
+
 [Poke:Infinite lives]
 A755,0
 
@@ -33,18 +45,24 @@ TABLE#
 After this, level 41 is the same as level 33, and so on ad infinitum,
 except with the time gradually being reduced to 400 at level 65.
 
-After level 99, the counter overflows to 0, but the internal level
-counter at #R$6EEB is an 8-bit number, so play can continue,
-wrapping round again and then to level 255 (displayed as "55"),
-after which level 0 is on the full difficulty level, then the
-level counter finally overflows to 1 and difficulty drops to the
-easiest. Unlike Pac-Man, there is no other bug so play can
-continue until the heat death of the universe....
+The game display showing the current level at #R$AEC2 can only accommodate two
+digits, but the internal counter at #R$6EEB is an 8-bit unsigned number. Therefore,
+after level 99, the counter overflows to 0, but play can continue as it if were 100,
+wrapping round again to 200 and progressing to level 255 (displayed as "55"). After
+this, level 0 is on the full difficulty level, then the level counter finally overflows
+to 1 and difficulty drops to the easiest.
+Unlike Pac-Man, there is no other related bug so play can continue until the heat death of
+the universe....
 
 [Fact:Mother duck]
 The mother duck is in play on every level, but its updated location
 in the routine at #R$A0C8 is ignored on levels below 9. The player
 will still lose a life if they walk into her.
+
+[Fact:Character name]
+The game's protagonist is assumed to be called "Henhouse Harry"
+after Chuckie Egg II. However, no name is stored anywhere in
+the original.
 
 [Fact:Theme tunes]
 The tune at the start of the game is "The Birdie Song" which was
@@ -58,3 +76,7 @@ of the traditional Spanish guitar piece "Romance Anonimo".
 [Fact:Speech]
 The game supports the Fuller Orator, a hardware extension to the Fuller Box
 audio box with a dedicated speech module. The routine for this is at #R$9CC2.
+
+[Index:DataTables:Data tables and buffers]
+GameStatusBuffer
+Data structures
