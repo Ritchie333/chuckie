@@ -147,6 +147,8 @@ c $95A6 Return the location in the room buffer for a co-ordinate
 R $95A6 HL On entry, contains co-ordinates to convert. On exit, holds the location in the buffer
 b $95C5
 b $9630
+b $9787
+b $97A7
 b $97AF
 c $9858 Run the game
 N $98BE Pause or abort the game if the appropriate keys are pressed
@@ -213,6 +215,7 @@ c $A4C8 Display instructions
 N $A515 Scroll the intro screen message
 c $A59D Run the game
 N $A604 Initialize the scores
+N $A653 Start this level
 N $A66E Level has had to end. If there are eggs left, lose a life
 N $A67B Level complete - give a bonus
 c $A6FE Run the "lose a life" sequence
@@ -237,7 +240,10 @@ c $AA49 Redefine the keys
 c $AB7B
 c $AABA
 c $AAE4 Play a random sound
-c $AAF4
+c $AAF4 Return any key pressed
+R $AAF4 H On exit, holds the bitfields key matrix tested (input to port FE), or 0 for none
+R $AAF4 L On exit, holds the keys pressed, or 0 for none
+R $AAF4 E On exit, holds the 'nth' key matrix tested ( 0 - 9 )
 c $AB19 Display a line of text
 c $AB60 Play a note of a tune
 R $AB60 HL Pointer to the pitch and length, or 0 to mark the end

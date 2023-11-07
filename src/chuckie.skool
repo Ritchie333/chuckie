@@ -1779,12 +1779,16 @@ b$9630 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $9768 DEFB $0F,$10,$11,$9F,$00,$00,$9B,$9C
  $9770 DEFB $9D,$00,$9E,$9F,$00,$00,$1B,$1C
  $9778 DEFB $1D,$00,$9F,$9E,$9E,$9E,$00,$00
- $9780 DEFB $12,$13,$14,$00,$A7,$9E,$9E,$05
- $9788 DEFB $05,$FF,$00,$05,$05,$FF,$00,$05
- $9790 DEFB $05,$FF,$00,$E8,$54,$40,$03,$F2
- $9798 DEFB $54,$90,$03,$F9,$54,$C8,$03,$EF
- $97A0 DEFB $54,$78,$03,$FE,$54,$F0,$03,$05
- $97A8 DEFB $05,$FF,$00,$6E,$73,$00,$00
+ $9780 DEFB $12,$13,$14,$00,$A7,$9E,$9E
+
+; Data block at 9787
+b$9787 DEFB $05,$05,$FF,$00,$05,$05,$FF,$00
+ $978F DEFB $05,$05,$FF,$00,$E8,$54,$40,$03
+ $9797 DEFB $F2,$54,$90,$03,$F9,$54,$C8,$03
+ $979F DEFB $EF,$54,$78,$03,$FE,$54,$F0,$03
+
+; Data block at 97A7
+b$97A7 DEFB $05,$05,$FF,$00,$6E,$73,$00,$00
 
 ; Data block at 97AF
 b$97AF DEFB $20,$8F,$90,$91,$92,$93,$94,$95
@@ -3748,6 +3752,7 @@ c$A59D LD IXh,$02    ;
  $A64A CALL $A9CE    ;
  $A64D LD BC,$0000   ;
  $A650 CALL $A921    ;
+; Start this level
 *$A653 CALL $AE9C    ;
  $A656 CALL $A960    ;
  $A659 LD BC,$0006   ;
@@ -4474,9 +4479,13 @@ c$AAE4 LD A,R        ;
  $AAF0 LD A,(HL)     ;
  $AAF1 JP $9CEB      ;
 
-; Routine at AAF4
+; Return any key pressed
 ;
 ; Used by the routines at #R$AA49 and #R$AB19.
+;
+; H On exit, holds the bitfields key matrix tested (input to port FE), or 0 for none
+; L On exit, holds the keys pressed, or 0 for none
+; E On exit, holds the 'nth' key matrix tested ( 0 - 9 )
 c$AAF4 LD D,$00      ;
  $AAF6 LD HL,$0000   ;
  $AAF9 LD B,$08      ;
@@ -4747,7 +4756,7 @@ b$AE0C DEFM ""
  $AE39 DEFM ""
  $AE48 DEFM ""
  $AE57 DEFM ""
- $AE66 DEFM "  "
+ $AE66 DEFM "  "
 
 ; Lose a life tune
 b$AE6A DEFB $02,$08,$02,$08,$02,$08,$02,$08
